@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovenience</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <a href="#">RENOVENIENCE</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">ABOUT</a>
+            <a href="#">PERSONALISE</a>
+            <div class="dropdown">
+                <a href="#">FLOORPLAN ▾</a>
+                <div class="dropdown-content">
+                    <a href="#">floorplan</a>
+                    <a href="#">saved floorplan</a>
+                </div>
+            </div>
+            <a href="#">APPOINTMENT</a>
+            <a href="#">MARKETPLACE</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </nav>
+
+    <div class="side-text left">FLOORPLAN</div>
+    <div class="side-text right">FLOORPLAN</div>
+
+    <main>
+        <div class="content-wrapper">
+            <div class="model-container">
+                <div class="upload-box">
+                    <p>UPLOAD YOUR FLOORPLAN</p>
+                    <input type="file" 
+                           id="fileUpload" 
+                           name="floorplan"
+                           accept="image/*" 
+                           style="display: none;">
+                </div>
+                <div class="upload-info">
+                    <p class="title">FLOORPLAN UPLOAD:</p>
+                    <p class="description">Some text</p>
+                    <p class="details">design | floorplan</p>
+                    <button class="reset-button" onclick="resetModel()">Upload New Floorplan</button>
+                    <button id="downloadBtn" class="download-button">Download Floorplan</button>
+                </div>
+            </div>
+
+            <div class="furniture-panel">
+                <h3>FURNITURE</h3>
+                <div class="furniture-grid">
+                    <div class="furniture-item" data-type="sofa">
+                        <img src="/images/furniture/sofa.png" alt="Sofa">
+                        <span>Sofa</span>
+                    </div>
+                    <div class="furniture-item" data-type="chair">
+                        <img src="/images/furniture/chair.png" alt="Chair">
+                        <span>Chair</span>
+                    </div>
+                    <div class="furniture-item" data-type="table">
+                        <img src="/images/furniture/table.png" alt="Table">
+                        <span>Table</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/DragControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Inisialisasi jsPDF
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

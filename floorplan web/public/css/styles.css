@@ -1,0 +1,362 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f1e5;
+    color: #444;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.brand a {
+    color: #444;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f5f1e5;
+    min-width: 160px;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search input {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #444;
+    background: transparent;
+}
+
+.search button {
+    padding: 0.3rem 1rem;
+    border: 1px solid #444;
+    background: transparent;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Side Text */
+.side-text {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    color: #444;
+    font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+}
+
+.side-text.left {
+    left: 2rem;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.side-text.right {
+    right: 2rem;
+}
+
+/* Upload Section */
+.upload-container {
+    flex: 1;
+    max-width: 800px;
+}
+
+.upload-box {
+    width: 600px;
+    height: 600px;
+    border: 1px solid #444;
+    margin: 20px auto;
+    position: relative;
+    background-color: #f5f1e5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.upload-box p {
+    color: #444;
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.upload-box canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Hide text when model is loaded */
+.upload-box.model-loaded p {
+    opacity: 0;
+}
+
+.upload-info {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.upload-info .title {
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-info .description {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-info .details {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.upload-box.model-loaded {
+    cursor: default;
+}
+
+/* Optional: Tambahkan tombol reset */
+.reset-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: 1px solid #444;
+    color: #444;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background: #444;
+    color: #f5f1e5;
+}
+
+/* Furniture Panel */
+.furniture-panel {
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #f5f1e5;
+    border: 1px solid #444;
+    padding: 2rem;
+    width: 300px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.furniture-panel.show {
+    opacity: 1;
+}
+
+.furniture-panel h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: #444;
+}
+
+.furniture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.furniture-item {
+    background: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.furniture-item:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.furniture-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+}
+
+.furniture-item span {
+    display: block;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .furniture-panel {
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+/* Content wrapper */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Model container */
+.model-container {
+    flex: 1;
+    max-width: 800px;
+    transition: transform 0.3s ease;
+}
+
+/* Upload box */
+.upload-box {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    position: relative;
+    background-color: #f5f1e5;
+}
+
+/* When model is loaded */
+.content-wrapper.model-loaded {
+    justify-content: flex-start;
+}
+
+.content-wrapper.model-loaded .model-container {
+    margin-left: 2rem;
+}
+
+/* Tambahkan styles untuk controls info */
+.controls-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.controls-info h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.controls-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.controls-info li {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: #666;
+}
+
+/* Tambahkan styles untuk tombol download */
+.download-button {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.8rem 2rem;
+    background: #444;
+    border: 1px solid #444;
+    color: #f5f1e5;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.download-button:hover {
+    background: #f5f1e5;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.download-button:active {
+    transform: translateY(1px);
+}
+
+.download-button:disabled {
+    background: #ccc;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
